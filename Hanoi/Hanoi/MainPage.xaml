@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hanoi.MainPage">
+
+    <StackLayout VerticalOptions="Center">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackLayout x:Name="t1" VerticalOptions="End" HorizontalOptions="Center"></StackLayout>
+            <StackLayout x:Name="t2" VerticalOptions="End" HorizontalOptions="Center" Grid.Column="1"></StackLayout>
+            <StackLayout x:Name="t3" VerticalOptions="End" HorizontalOptions="Center" Grid.Column="2"></StackLayout>
+        </Grid>
+        <StackLayout >
+            <Stepper HorizontalOptions="Center" x:Name="Step" Minimum="3" Maximum="8" ValueChanged="Step_ValueChanged"/>
+            <Button Text="solucionar" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
