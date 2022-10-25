@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hanoi.Android", "Hanoi\Hano
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hanoi.iOS", "Hanoi\Hanoi.iOS\Hanoi.iOS.csproj", "{E602CBD7-C7EB-458E-A2F9-E58C0D79B4DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hanoi", "Hanoi\Hanoi\Hanoi.csproj", "{DCAF4FC1-9640-483C-942E-69CC250236FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hanoi", "Hanoi\Hanoi\Hanoi.csproj", "{DCAF4FC1-9640-483C-942E-69CC250236FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

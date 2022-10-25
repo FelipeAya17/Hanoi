@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Hanoi.movs;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Hanoi.Models;
 
 namespace Hanoi
 {
@@ -74,18 +78,30 @@ namespace Hanoi
             }
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            if (this.mov.Count == 0)
-            {
-                Hanoi((int)this.Step.Value, 1, 3, 2);
+            //if (this.mov.Count == 0)
+            //{
+            //    Hanoi((int)this.Step.Value, 1, 3, 2);
 
-            }
-            else
-            {
-                render();
+            //}
+            //else
+            //{
+            //    render();
 
+            //}
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://127.0.0.1:443/clients/users");
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accpet", "application/json");
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.SendAsync(request);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
             }
+
         }
         public void Hanoi(int disco, int ori, int des, int aux)
         {
