@@ -90,18 +90,26 @@ namespace Hanoi
             //    render();
 
             //}
-            var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://127.0.0.1:443/clients/users");
-            request.Method = HttpMethod.Get;
-            request.Headers.Add("Accpet", "application/json");
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.SendAsync(request);
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
-            }
+            //var request = new HttpRequestMessage();
+            //request.RequestUri = new Uri("https://192.16.85.203/clients/users");
+            //request.Method = HttpMethod.Get;
+            //request.Headers.Add("Accpet", "application/json");
+            //var client = new HttpClient();
+            //HttpResponseMessage response = await client.SendAsync(request);
+            //if (response.StatusCode == HttpStatusCode.OK)
+            //{
+            //    string content = await response.Content.ReadAsStringAsync();
+            //    var resultado = JsonConvert.DeserializeObject<List<Users>>(content);
+            //}
+            var v = retrive();
 
+        }
+        public async Task retrive()
+        {
+            string url = "https://192.168.85.203/clients/users";
+            WSClient client = new WSClient();
+            List<Models.Users> users;
+            var user = await client.Get<List<Models.Users>>(url);
         }
         public void Hanoi(int disco, int ori, int des, int aux)
         {
